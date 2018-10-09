@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>3015e354-6474-420b-9bbc-1cf91aa0c2a4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>eac7e294-711e-44a6-b85a-cefcd4a3f73e</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dds;dlg;fbx;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{b1db9478-0dcf-45cc-b51a-7d049937d80f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\SceneObject">
+      <UniqueIdentifier>{5b841897-7cfd-4eed-bb7e-9133ab9d8882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{66fda521-49f8-45d7-bffe-77c1528dae1d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="StepTimer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceResources.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\SingletonBase.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\SceneObject\PlayScene.h">
+      <Filter>Game\SceneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\SceneObject\SceneBase.h">
+      <Filter>Game\SceneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\SceneObject\SceneManager.h">
+      <Filter>Game\SceneObject</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="DeviceResources.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\SceneObject\PlayScene.cpp">
+      <Filter>Game\SceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\SceneObject\SceneBase.cpp">
+      <Filter>Game\SceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\SceneObject\SceneManager.cpp">
+      <Filter>Game\SceneObject</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="directx.ico">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="settings.manifest">
+      <Filter>Assets</Filter>
+    </Manifest>
+  </ItemGroup>
+</Project>
