@@ -24,9 +24,6 @@
     <ClInclude Include="StepTimer.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="DeviceResources.h">
-      <Filter>Common</Filter>
-    </ClInclude>
     <ClInclude Include="Utility\SingletonBase.h">
       <Filter>Utility</Filter>
     </ClInclude>
@@ -39,14 +36,23 @@
     <ClInclude Include="GameObject\SceneObject\SceneManager.h">
       <Filter>Game\SceneObject</Filter>
     </ClInclude>
+    <ClInclude Include="Utility\DeviceResources.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Emotion.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\ObjectBase.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Player.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="DeviceResources.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject\SceneObject\PlayScene.cpp">
       <Filter>Game\SceneObject</Filter>
     </ClCompile>
@@ -55,6 +61,18 @@
     </ClCompile>
     <ClCompile Include="GameObject\SceneObject\SceneManager.cpp">
       <Filter>Game\SceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\DeviceResources.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Emotion.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\ObjectBase.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Player.cpp">
+      <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

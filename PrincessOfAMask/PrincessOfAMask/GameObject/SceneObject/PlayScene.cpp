@@ -7,7 +7,7 @@
 
 // インクルードディレクトリ
 #include "PlayScene.h"
-#include "../../DeviceResources.h"
+#include "../../Utility/DeviceResources.h"
 
 // usingディレクトリ
 using namespace DirectX;

@@ -12,7 +12,7 @@
 #include <fstream>
 #include <sstream>
 
-#include "DeviceResources.h"
+#include "Utility/DeviceResources.h"
 #include "StepTimer.h"
 #include "GameObject/SceneObject/SceneManager.h"
 

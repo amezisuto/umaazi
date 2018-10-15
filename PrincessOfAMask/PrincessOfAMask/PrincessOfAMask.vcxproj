@@ -163,7 +163,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DeviceResources.h" />
+    <ClInclude Include="GameObject\Emotion.h" />
+    <ClInclude Include="GameObject\ObjectBase.h" />
+    <ClInclude Include="GameObject\Player.h" />
+    <ClInclude Include="Utility\DeviceResources.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject\SceneObject\PlayScene.h" />
     <ClInclude Include="GameObject\SceneObject\SceneBase.h" />
@@ -173,7 +176,10 @@
     <ClInclude Include="Utility\SingletonBase.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DeviceResources.cpp" />
+    <ClCompile Include="GameObject\Emotion.cpp" />
+    <ClCompile Include="GameObject\ObjectBase.cpp" />
+    <ClCompile Include="GameObject\Player.cpp" />
+    <ClCompile Include="Utility\DeviceResources.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject\SceneObject\PlayScene.cpp" />
     <ClCompile Include="GameObject\SceneObject\SceneBase.cpp" />
