@@ -79,7 +79,7 @@ void SceneManager::Update()
 /// <summary>
 /// 描画
 /// </summary>
-void SceneManager::Renrer()
+void SceneManager::Render()
 {
 	for (list<SceneBase*>::iterator it = m_list.begin(); it != m_list.end(); it++)
 	{

@@ -30,7 +30,7 @@ public:
 	void Update();
 
 	// 描画
-	void Renrer();
+	void Render();
 
 	// シーンの追加
 	void AddScene(SceneBase* scene);

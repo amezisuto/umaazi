@@ -98,7 +98,7 @@ void Game::Render()
 
 	// ここから描画処理を記述する
 
-	SceneManager::GetInstance()->Renrer();
+	SceneManager::GetInstance()->Render();
 	
 	// ここまで
 

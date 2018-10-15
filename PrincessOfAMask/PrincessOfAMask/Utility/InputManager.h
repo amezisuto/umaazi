@@ -8,23 +8,35 @@
 #pragma once
 
 // インクルードディレクトリ
-#include "../pch.h"
-
 #include <Keyboard.h>
-#include <Mouse.h>
 
 #include "SingletonBase.h"
+#include <list>
 
 class InputManager : public SingletonBase<InputManager>
 {
+public:
+	// キー情報の構造体
+	struct KeyData
+	{
+		int code;
+		int frame;
+		KeyData(int code)
+		{
+			this->code = code;
+			frame = 0;
+		}
+	};
+
 // メンバー変数
 private:
 	std::unique_ptr<DirectX::Keyboard> mp_keyboard;        // キー入力情報
-	std::unique_ptr<DirectX::Mouse> mp_mouse;              // マウス入力情報
 	
-
-	DirectX::Mouse::ButtonStateTracker m_mouseTracker;          // マウストラッカー
 	DirectX::Keyboard::KeyboardStateTracker m_keyTracker;  // キートラッカー
+
+	std::list<KeyData> m_keyMemo;						   // キー入力の記憶
+
+	static const int SAVE_FRAME;
 
 // メンバー関数(関数、Getter、Setter)
 private:
@@ -39,15 +51,12 @@ public:
 	// 更新
 	void Update();
 
-	// マウスの状態取得
-	DirectX::Mouse::State GetMouseState();
 	// キーボードの状態取得
 	DirectX::Keyboard::State GetKeyState();
+	
 	// Trackerの取得
-	DirectX::Mouse::ButtonStateTracker GetTracker();
 	DirectX::Keyboard::KeyboardStateTracker GetKeyTracker();
 
-	// マウス座標の取得
-	int GetMousePosX() { return GetMouseState().x; }
-	int GetMousePosY() { return GetMouseState().y; }
+	// キーデータを追加する
+	void AddKey(int code);
 };
