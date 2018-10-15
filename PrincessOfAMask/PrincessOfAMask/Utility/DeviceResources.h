@@ -9,7 +9,7 @@
 
 // インクルードディレクトリ
 #include "../pch.h"
-#include "../Utility/SingletonBase.h"
+#include "SingletonBase.h"
 
 // namespaceディレクトリ
 namespace DX
