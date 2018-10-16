@@ -9,6 +9,8 @@
 #include "PlayScene.h"
 #include "../../Utility/DeviceResources.h"
 
+#include "../../GameDebug/Debug.h"
+
 // usingディレクトリ
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -59,4 +61,6 @@ void PlayScene::Render()
 	m_font->DrawString(m_sprites.get(), L"PlayScene", Vector2(10.0f, 10.0f));
 
 	m_sprites->End();
+
+	Debug::SingletonGetInstance().DebugRender("Test", Vector2(30.0f, 30.0f));
 }
