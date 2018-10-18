@@ -163,6 +163,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="GameDebug\Debug.h" />
     <ClInclude Include="GameObject\Emotion.h" />
     <ClInclude Include="GameObject\ObjectBase.h" />
     <ClInclude Include="GameObject\Player.h" />
@@ -173,9 +174,12 @@
     <ClInclude Include="GameObject\SceneObject\SceneManager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="StepTimer.h" />
+    <ClInclude Include="Utility\Flag.h" />
+    <ClInclude Include="Utility\InputManager.h" />
     <ClInclude Include="Utility\SingletonBase.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GameDebug\Debug.cpp" />
     <ClCompile Include="GameObject\Emotion.cpp" />
     <ClCompile Include="GameObject\ObjectBase.cpp" />
     <ClCompile Include="GameObject\Player.cpp" />
@@ -191,6 +195,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Utility\InputManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />

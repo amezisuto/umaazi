@@ -10,8 +10,10 @@
 
 // usingディレクトリ
 
-// 定数
+// 静的変数の初期化
 const int InputManager::SAVE_FRAME = 10;
+std::list<InputManager::KeyData> InputManager::m_keySave;
+
 
 /// <summary>
 /// コンストラクタ
@@ -19,6 +21,7 @@ const int InputManager::SAVE_FRAME = 10;
 InputManager::InputManager()
 {
 	mp_keyboard = std::make_unique<DirectX::Keyboard>();
+	
 }
 
 /// <summary>
@@ -48,17 +51,24 @@ void InputManager::Update()
 	m_keyTracker.Update(keyState);
 
 	//毎フレーム記憶したコードのフレームを進める
-	for (std::list<KeyData>::iterator it = m_keyMemo.begin(); it != m_keyMemo.end();it++)
+	for (std::list<KeyData>::iterator it = m_keySave.begin(); it != m_keySave.end();it++)
 	{
-		it->frame++;
+		(it)->frame++;
 	}
 
+	//一定フレームで記憶したコードを削除
+	m_keySave.erase(
+		std::remove_if(m_keySave.begin(), m_keySave.end(),
+			[](KeyData data) { return data.frame >= SAVE_FRAME; }),
+		m_keySave.end());
 
 
 }
 
-
+/// <summary>
+/// キーの追加
+/// </summary>
 void InputManager::AddKey(int code)
 {
-	m_keyMemo.push_back(KeyData(code));
+	m_keySave.push_back(KeyData(code));
 }

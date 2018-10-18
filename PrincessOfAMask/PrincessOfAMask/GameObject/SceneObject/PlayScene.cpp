@@ -22,15 +22,7 @@ using namespace std;
 /// </summary>
 PlayScene::PlayScene()
 {
-	ID3D11Device* device = DX::DeviceResources::SingletonGetInstance().GetD3DDevice();
-	ID3D11DeviceContext* context = DX::DeviceResources::SingletonGetInstance().GetD3DDeviceContext();
-	RECT outputsize = DX::DeviceResources::SingletonGetInstance().GetOutputSize();
-
-	// スプライトバッチの作成
-	m_sprites = std::make_unique<SpriteBatch>(context);
-
-	// スプライトフォントの作成
-	m_font = std::make_unique<SpriteFont>(device, L"SegoeUI_18.spritefont");
+	
 }
 
 /// <summary>
@@ -55,12 +47,5 @@ bool PlayScene::Update()
 /// </summary>
 void PlayScene::Render()
 {
-	//デバッグテキスト
-	m_sprites->Begin();
 
-	m_font->DrawString(m_sprites.get(), L"PlayScene", Vector2(10.0f, 10.0f));
-
-	m_sprites->End();
-
-	Debug::SingletonGetInstance().DebugRender("Test", Vector2(30.0f, 30.0f));
 }

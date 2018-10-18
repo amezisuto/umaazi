@@ -12,6 +12,7 @@
 #include "math.h"
 
 #include "GameObject/SceneObject/PlayScene.h"
+#include "GameDebug\Debug.h"
 
 // デバッグ
 #if _DEBUG
@@ -99,6 +100,8 @@ void Game::Render()
 	// ここから描画処理を記述する
 
 	SceneManager::GetInstance()->Render();
+
+	Debug::SingletonGetInstance().Render();
 	
 	// ここまで
 

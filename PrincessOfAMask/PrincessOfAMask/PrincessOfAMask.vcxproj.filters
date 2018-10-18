@@ -17,6 +17,9 @@
     <Filter Include="Utility">
       <UniqueIdentifier>{66fda521-49f8-45d7-bffe-77c1528dae1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{f4d3f4b1-39e1-4dfa-b7fe-7fb2ce24c0ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -48,6 +51,15 @@
     <ClInclude Include="GameObject\Player.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="Utility\Flag.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\InputManager.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDebug\Debug.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -73,6 +85,12 @@
     </ClCompile>
     <ClCompile Include="GameObject\Player.cpp">
       <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\InputManager.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="GameDebug\Debug.cpp">
+      <Filter>Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -9,9 +9,10 @@
 
 // インクルードディレクトリ
 #include <Keyboard.h>
+#include <algorithm>
+#include <list>
 
 #include "SingletonBase.h"
-#include <list>
 
 class InputManager : public SingletonBase<InputManager>
 {
@@ -27,36 +28,36 @@ public:
 			frame = 0;
 		}
 	};
-
-// メンバー変数
-private:
-	std::unique_ptr<DirectX::Keyboard> mp_keyboard;        // キー入力情報
 	
-	DirectX::Keyboard::KeyboardStateTracker m_keyTracker;  // キートラッカー
-
-	std::list<KeyData> m_keyMemo;						   // キー入力の記憶
-
-	static const int SAVE_FRAME;
-
 // メンバー関数(関数、Getter、Setter)
 private:
-	// フレンド関数
-	friend class SingletonBase<InputManager>;
-
+	
 	// コンストラクタ
 	InputManager();
 
+	// Trackerの取得
+	DirectX::Keyboard::KeyboardStateTracker GetKeyTracker();
+
 public:
+	friend SingletonBase<InputManager>;
 
 	// 更新
 	void Update();
 
 	// キーボードの状態取得
 	DirectX::Keyboard::State GetKeyState();
-	
-	// Trackerの取得
-	DirectX::Keyboard::KeyboardStateTracker GetKeyTracker();
 
 	// キーデータを追加する
 	void AddKey(int code);
+
+	// メンバー変数
+private:
+	std::unique_ptr<DirectX::Keyboard> mp_keyboard;        // キー入力情報
+
+	DirectX::Keyboard::KeyboardStateTracker m_keyTracker;  // キートラッカー
+
+	static std::list<KeyData> m_keySave;				   // キー入力の記憶
+
+	static const int SAVE_FRAME;						   // キーを記憶するフレーム数
+
 };

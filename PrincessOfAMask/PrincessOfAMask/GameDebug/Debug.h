@@ -2,7 +2,7 @@
 // File.    Debug.h
 // Summary. DebugClass
 // Date.    2018/10/15
-// Auther.  Miu Himi
+// Auther.  Miu Himi ： Eijirou Tsujii
 //////////////////////////////////////////////////////////////
 
 #pragma once
@@ -14,6 +14,7 @@
 
 #include "../pch.h"
 #include "../Utility/SingletonBase.h"
+#include <list>
 
 class Debug : public SingletonBase<Debug>
 {
@@ -21,17 +22,36 @@ class Debug : public SingletonBase<Debug>
 public:
 	friend SingletonBase<Debug>;
 private:
+	// キー情報の構造体
+	struct DebugTextData
+	{
+		std::wstring text;
+		DirectX::SimpleMath::Vector2 pos;
+		DebugTextData(std::wstring text,DirectX::SimpleMath::Vector2 pos)
+		{
+			this->text = text;
+			this->pos = pos;
+		}
+	};
+
 	std::unique_ptr<DirectX::SpriteBatch>   m_sprites;       // スプライトバッチ
 	std::unique_ptr<DirectX::SpriteFont>    m_font;          // スプライトフォント
-
+	std::list<DebugTextData> m_debugText;					 // デバッグで表示するテキストリスト
+	
 // メンバー関数
 public:
 	~Debug();
+	void Render();
 
-	// デバッグ描画
+	// リストに追加
 	void DebugRender(char* debugLen, DirectX::SimpleMath::Vector2 debugPos);
+	void DebugRender(float debugLen, DirectX::SimpleMath::Vector2 debugPos);
+	void DebugRender(DirectX::SimpleMath::Vector2 debugInf, DirectX::SimpleMath::Vector2 debugPos);
+	void DebugRender(char* debugLen, float debugInf, DirectX::SimpleMath::Vector2 debugPos);
+	void DebugRender(char* debugLen, DirectX::SimpleMath::Vector2 debugInf, DirectX::SimpleMath::Vector2 debugPos);
 
 private:
 	Debug();
-
+	std::wstring NumtoWstring(float num);
+	std::wstring ChartoWstring(char* text);
 };

@@ -232,6 +232,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         PostQuitMessage(0);
         break;
 
+	case WM_KEYDOWN:
+		break;
+
     case WM_SYSKEYDOWN:
         if (wParam == VK_RETURN && (lParam & 0x60000000) == 0x20000000)
         {
