@@ -174,6 +174,7 @@
     <ClInclude Include="GameObject\SceneObject\SceneManager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="StepTimer.h" />
+    <ClInclude Include="Utility\DrawManager.h" />
     <ClInclude Include="Utility\Flag.h" />
     <ClInclude Include="Utility\InputManager.h" />
     <ClInclude Include="Utility\SingletonBase.h" />
@@ -195,6 +196,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Utility\DrawManager.cpp" />
     <ClCompile Include="Utility\InputManager.cpp" />
   </ItemGroup>
   <ItemGroup>
