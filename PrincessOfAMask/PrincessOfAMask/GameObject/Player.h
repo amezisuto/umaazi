@@ -8,46 +8,41 @@
 #pragma once
 
 // インクルードディレクトリ
-#include "../pch.h"
-
-#include "ObjectBase.h"
 #include "Emotion.h"
+#include "PlayerStates.h"
+#include "..\Utility\InputManager.h"
 
-class Player : ObjectBase
+class Player : public SingletonBase<Player>
 {
 // メンバー変数
 public:
 
 private:
-	float m_hp;
-	float m_exp;
-	int m_level;
-	Emotion::EmotionState m_emotion;
+	//プレイヤーのステータス
+	PlayerStates m_states;
+	EmotionState m_emotion;
 
 // メンバー関数
 public:
-	// コンストラクター
-	Player();
+	friend SingletonBase<Player>;
+
 	// デストラクター
 	~Player();
 
 	// 更新
-	bool Update();
+	void Update();
 	// 描画
 	void Render();
 
 	// Getter
-	float GetHp()                                  { return m_hp; }
-	float GetExp()                                 { return m_exp; }
-	int GetLevel()                                 { return m_level; }
-	Emotion::EmotionState GetEmotion()             { return m_emotion; }
+	PlayerStates GetPlayerStates()		  { return m_states; }
+	EmotionState GetEmotion()             { return m_emotion; }
 
 	// Setter
-	void SetHp(float hp)                           { m_hp = hp; }
-	void SetExp(float exp)                         { m_exp = exp; }
-	void SetLevel(int level)                       { m_level = level; }
-	void SetEmotion(Emotion::EmotionState emotion) { m_emotion = emotion; }
+	void SetStates(PlayerStates states)   { m_states = states; }
+	void SetEmotion(EmotionState emotion) { m_emotion = emotion; }
 
 private:
-
+	// コンストラクター
+	Player(PlayerStates states);
 };

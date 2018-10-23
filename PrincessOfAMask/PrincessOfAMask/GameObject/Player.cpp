@@ -11,27 +11,26 @@
 /// <summary>
 /// コンストラクタ
 /// </summary>
-Player::Player()
-	: m_hp(0.0f),
-      m_exp(0.0f),
-	  m_level(0),
-	  m_emotion(Emotion::NORMAL)
+Player::Player(PlayerStates states): 
+	m_states(states)
 {
+
 }
 /// <summary>
 /// デストラクタ
 /// </summary>
 Player::~Player()
 {
+
 }
 
 /// <summary>
 /// 更新
 /// </summary>
 /// <returns>終了状態</returns>
-bool Player::Update()
+void Player::Update()
 {
-	return true;
+	
 }
 
 /// <summary>

@@ -50,7 +50,7 @@ bool PlayScene::Update()
 {
 	if (InputManager::SingletonGetInstance().GetKeyState().A)
 	{
-		Enemy* enemy = new Enemy(EnemyType::Slime, EnemyStates("slime", 1, 1, 60, 1, 1, 1));
+		Enemy* enemy = new Enemy(EnemyType::Slime, EnemyStates("slime", 1, 1, 60, 1, 1, 1,Vector2(10,10)));
 		EnemyManager::SingletonGetInstance().PopEnemy(enemy);
 	}
 

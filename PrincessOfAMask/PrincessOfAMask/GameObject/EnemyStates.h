@@ -10,7 +10,8 @@ struct EnemyStates
 	int Exp;								//ŒoŒ±’l
 	int Money;								//‚¨‹à
 	char* Name;								//–¼‘O
-	EnemyStates(char* Name, int Atack, int Defense, int Hp, int Lv, int Exp, int Money)
+	DirectX::SimpleMath::Vector2 Pos;
+	EnemyStates(char* Name, int Atack, int Defense, int Hp, int Lv, int Exp, int Money,DirectX::SimpleMath::Vector2 Pos)
 	{
 		this->Atack = Atack;
 		this->Defense = Defense;
@@ -19,6 +20,7 @@ struct EnemyStates
 		this->Lv = Lv;
 		this->Money = Money;
 		this->Name = Name;
+		this->Pos = Pos;
 	}
 };
 

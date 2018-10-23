@@ -26,9 +26,5 @@ public:
 	//描画処理
 	void Render() override;
 private:
-	// スプライトバッチ
-	std::unique_ptr<DirectX::SpriteBatch> m_sprites;
-
-	// スプライトフォント
-	std::unique_ptr<DirectX::SpriteFont> m_font;
+	ID3D11ShaderResourceView* m_font;
 };

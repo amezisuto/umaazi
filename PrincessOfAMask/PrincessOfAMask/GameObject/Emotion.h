@@ -9,18 +9,13 @@
 
 // インクルードデイレクトリ
 #include "../pch.h"
-
-class Emotion
+enum EmotionState
 {
-public:
-	enum EmotionState
-	{
-		NORMAL,     // 普通
-		JOY,        // 喜
-		ANGER,      // 怒
-		SADNESS,    // 哀
-		Happiness,  // 楽
+	NORMAL,     // 普通
+	JOY,        // 喜
+	ANGER,      // 怒
+	SADNESS,    // 哀
+	Happiness,  // 楽
 
-		NONE,       // 総数
-	};
+	NONE,       // 総数
 };
