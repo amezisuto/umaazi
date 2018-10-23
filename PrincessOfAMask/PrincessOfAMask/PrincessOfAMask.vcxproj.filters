@@ -20,6 +20,12 @@
     <Filter Include="Debug">
       <UniqueIdentifier>{f4d3f4b1-39e1-4dfa-b7fe-7fb2ce24c0ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Save">
+      <UniqueIdentifier>{b8664f5c-97b9-48cb-8f1f-a6c264da2ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Enemy">
+      <UniqueIdentifier>{1580205e-c102-47bd-90b5-a3356d3da7a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -63,6 +69,18 @@
     <ClInclude Include="Utility\DrawManager.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="SaveData\SaveManager.h">
+      <Filter>Save</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Enemy.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\EnemyManager.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\EnemyStates.h">
+      <Filter>Game\Enemy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -97,6 +115,15 @@
     </ClCompile>
     <ClCompile Include="Utility\DrawManager.cpp">
       <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveData\SaveManager.cpp">
+      <Filter>Save</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Enemy.cpp">
+      <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\EnemyManager.cpp">
+      <Filter>Game\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

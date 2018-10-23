@@ -29,6 +29,7 @@ Debug::Debug()
 /// <summary>
 /// float型からwstring型への変換
 /// </summary>
+/// <param name="text">変換する数値</param>
 /// <returns>変換したwstring</returns>
 wstring Debug::NumtoWstring(float num)
 {
@@ -42,6 +43,7 @@ wstring Debug::NumtoWstring(float num)
 /// <summary>
 /// char型からwstring型への変換
 /// </summary>
+/// <param name="text">変換する文字</param>
 /// <returns>変換したwstring</returns>
 std::wstring Debug::ChartoWstring(char * text)
 {
@@ -97,14 +99,18 @@ void Debug::Render()
 /// <summary>
 /// リストにデータを追加する
 /// </summary>
+/// <param name="debugLen">表示したい文字</param>
+/// <param name="debugPos">表示する場所</param>
 void Debug::DebugRender(char* debugLen, DirectX::SimpleMath::Vector2 debugPos)
 {
 	m_debugText.push_back(DebugTextData(ChartoWstring(debugLen), debugPos));
 }
 
 /// <summary>
-/// リストにデータを追加する
+/// リストにデータを追加
 /// </summary>
+/// <param name="debugLen">表示したい数値</param>
+/// <param name="debugPos">表示する場所</param>
 void Debug::DebugRender(float debugLen, DirectX::SimpleMath::Vector2 debugPos)
 {
 	m_debugText.push_back(DebugTextData(NumtoWstring(debugLen), debugPos));
@@ -113,6 +119,8 @@ void Debug::DebugRender(float debugLen, DirectX::SimpleMath::Vector2 debugPos)
 /// <summary>
 /// リストにデータを追加する
 /// </summary>
+/// <param name="debugInf">表示するデータ</param>
+/// <param name="debugPos">表示する場所</param>
 void Debug::DebugRender(DirectX::SimpleMath::Vector2 debugInf, DirectX::SimpleMath::Vector2 debugPos)
 {
 	wstringstream ssX, ssY;
@@ -126,6 +134,9 @@ void Debug::DebugRender(DirectX::SimpleMath::Vector2 debugInf, DirectX::SimpleMa
 /// <summary>
 /// リストにデータを追加する
 /// </summary>
+/// <param name="debugLen">表示するデータの名前</param>
+/// <param name="debugInf">表示するデータ</param>
+/// <param name="debugPos">表示する場所</param>
 void Debug::DebugRender(char * debugLen, float debugInf, DirectX::SimpleMath::Vector2 debugPos)
 {
 	wstringstream ss;
@@ -138,6 +149,9 @@ void Debug::DebugRender(char * debugLen, float debugInf, DirectX::SimpleMath::Ve
 /// <summary>
 /// リストにデータを追加する
 /// </summary>
+/// <param name="debugLen">表示するデータの名前</param>
+/// <param name="debugInf">表示するデータ</param>
+/// <param name="debugPos">表示する場所</param>
 void Debug::DebugRender(char * debugLen, DirectX::SimpleMath::Vector2 debugInf, DirectX::SimpleMath::Vector2 debugPos)
 {
 	wstringstream ss,ssY;
@@ -147,3 +161,4 @@ void Debug::DebugRender(char * debugLen, DirectX::SimpleMath::Vector2 debugInf, 
 
 	m_debugText.push_back(DebugTextData(str, debugPos));
 }
+
