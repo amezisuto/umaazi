@@ -11,8 +11,9 @@
 
 #include "math.h"
 
-#include "GameObject/SceneObject/PlayScene.h"
 #include "GameDebug\Debug.h"
+
+#include "GameObject\SceneObject\StartScene.h"
 
 // デバッグ
 #if _DEBUG
@@ -46,8 +47,7 @@ void Game::Initialize(HWND window, int width, int height)
 	DX::DeviceResources::SingletonGetInstance().CreateWindowSizeDependentResources();
     CreateWindowSizeDependentResources();
 
-	PlayScene* play = new PlayScene();
-	SceneManager::GetInstance()->AddScene(play);
+	StartScene();
 
     // TODO: Change the timer settings if you want something other than the default variable timestep mode.
     // e.g. for 60 FPS fixed timestep update logic, call:

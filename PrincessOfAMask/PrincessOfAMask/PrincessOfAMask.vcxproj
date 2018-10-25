@@ -170,6 +170,8 @@
     <ClInclude Include="GameObject\EnemyStates.h" />
     <ClInclude Include="GameObject\ObjectBase.h" />
     <ClInclude Include="GameObject\Player.h" />
+    <ClInclude Include="GameObject\SceneObject\StartScene.h" />
+    <ClInclude Include="GameObject\SceneObject\TitleScene.h" />
     <ClInclude Include="SaveData\SaveManager.h" />
     <ClInclude Include="Utility\DeviceResources.h" />
     <ClInclude Include="Game.h" />
@@ -190,6 +192,7 @@
     <ClCompile Include="GameObject\EnemyManager.cpp" />
     <ClCompile Include="GameObject\ObjectBase.cpp" />
     <ClCompile Include="GameObject\Player.cpp" />
+    <ClCompile Include="GameObject\SceneObject\TitleScene.cpp" />
     <ClCompile Include="SaveData\SaveManager.cpp" />
     <ClCompile Include="Utility\DeviceResources.cpp" />
     <ClCompile Include="Game.cpp" />

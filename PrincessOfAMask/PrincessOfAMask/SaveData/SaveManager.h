@@ -12,6 +12,7 @@ public:
 	~SaveManager();
 
 	void Save();
+	void LoadSave();
 
 private:
 	SaveManager();

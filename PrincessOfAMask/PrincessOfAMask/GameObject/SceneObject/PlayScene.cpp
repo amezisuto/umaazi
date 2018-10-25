@@ -7,6 +7,7 @@
 
 // インクルードディレクトリ
 #include "PlayScene.h"
+
 #include "../../Utility/DeviceResources.h"
 
 #include "../../GameDebug/Debug.h"
@@ -20,6 +21,8 @@
 #include "..\EnemyManager.h"
 
 #include "..\Enemy.h"
+
+#include "..\Player.h"
 // usingディレクトリ
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -54,6 +57,8 @@ bool PlayScene::Update()
 		EnemyManager::SingletonGetInstance().PopEnemy(enemy);
 	}
 
+	Player::SingletonGetInstance().Update();
+
 	EnemyManager::SingletonGetInstance().Update();
 
 	return true;
@@ -64,5 +69,9 @@ bool PlayScene::Update()
 /// </summary>
 void PlayScene::Render()
 {
+	Player::SingletonGetInstance().Render();
+
 	EnemyManager::SingletonGetInstance().Render();
+
+	Debug::SingletonGetInstance().DebugRender("PlayScene", Vector2(10, 10));
 }

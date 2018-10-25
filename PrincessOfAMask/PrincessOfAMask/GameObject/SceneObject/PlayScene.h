@@ -8,7 +8,6 @@
 #pragma once
 
 // インクルードディレクトリ
-#include "../../pch.h"
 #include "SceneBase.h"
 
 class PlayScene : public SceneBase
@@ -26,5 +25,4 @@ public:
 	//描画処理
 	void Render() override;
 private:
-	ID3D11ShaderResourceView* m_font;
 };

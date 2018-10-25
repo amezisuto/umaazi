@@ -20,7 +20,7 @@ public:
 private:
 	//プレイヤーのステータス
 	PlayerStates m_states;
-	EmotionState m_emotion;
+	Emotion::EmotionState m_emotion;
 
 // メンバー関数
 public:
@@ -36,13 +36,13 @@ public:
 
 	// Getter
 	PlayerStates GetPlayerStates()		  { return m_states; }
-	EmotionState GetEmotion()             { return m_emotion; }
+	Emotion::EmotionState GetEmotion()             { return m_emotion; }
 
 	// Setter
 	void SetStates(PlayerStates states)   { m_states = states; }
-	void SetEmotion(EmotionState emotion) { m_emotion = emotion; }
+	void SetEmotion(Emotion::EmotionState emotion) { m_emotion = emotion; }
 
 private:
 	// コンストラクター
-	Player(PlayerStates states);
+	Player();
 };

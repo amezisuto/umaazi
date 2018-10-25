@@ -81,6 +81,12 @@
     <ClInclude Include="GameObject\EnemyStates.h">
       <Filter>Game\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="GameObject\SceneObject\StartScene.h">
+      <Filter>Game\SceneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\SceneObject\TitleScene.h">
+      <Filter>Game\SceneObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
@@ -124,6 +130,9 @@
     </ClCompile>
     <ClCompile Include="GameObject\EnemyManager.cpp">
       <Filter>Game\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\SceneObject\TitleScene.cpp">
+      <Filter>Game\SceneObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
