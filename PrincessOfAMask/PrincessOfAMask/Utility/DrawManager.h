@@ -17,8 +17,10 @@ class DrawManager:public SingletonBase<DrawManager>
 public:
 	
 private:
-	std::unique_ptr<DirectX::SpriteBatch>     m_sprites;    // スプライトバッチ
-	std::unique_ptr<DirectX::CommonStates>    m_states;     // コモンステート
+	std::unique_ptr<DirectX::SpriteBatch>                m_sprites;    // スプライトバッチ
+	std::unique_ptr<DirectX::CommonStates>               m_states;     // コモンステート
+
+	Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>     m_texture;    // テクスチャハンドル
 
 // メンバー関数
 public:
@@ -30,6 +32,9 @@ public:
 	// スプライトの描画
 	void Draw(ID3D11ShaderResourceView* texture, DirectX::SimpleMath::Vector2 pos);
 	void DrawRect(ID3D11ShaderResourceView* texture, DirectX::SimpleMath::Vector2 pos, RECT const* sourceRectangle);
+
+	void Draw(char* textureName, DirectX::SimpleMath::Vector2 pos);
+	void DrawRect(char* textureName, DirectX::SimpleMath::Vector2 pos, RECT const* sourceRectangle);
 private:
 	// コンストラクタ
 	DrawManager();
