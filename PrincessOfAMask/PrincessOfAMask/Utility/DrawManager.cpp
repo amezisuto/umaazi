@@ -92,22 +92,25 @@ void DrawManager::Draw(char* textureName, DirectX::SimpleMath::Vector2 pos)
 
 		// シーンパスの設定
 		char* scenePath;
-		switch (sceneFilePath[i])
+		/*switch (sceneFilePath[i])
 		{
 		case FilePath::ScenePath::LogoScene:  scenePath = "LogoScene";  break;
 		case FilePath::ScenePath::TitleScene: scenePath = "TitleScene"; break;
 		case FilePath::ScenePath::PlayScene:  scenePath = "PlayScene";  break;
-		}
+		}*/
+		scenePath = FilePath::SetSceneFilePath(sceneFilePath[i]);
+
 		for (int i = 0; i < FilePath::ObjectPath::NumObject; ++i)
 		{
 			// オブジェクトパスの設定
 			char* objectPath;
-			switch (objectFilePath[i])
+			/*switch (objectFilePath[i])
 			{
 			case FilePath::ObjectPath::Character: objectPath = "Character"; break;
 			case FilePath::ObjectPath::UI:        objectPath = "UI";        break;
 			case FilePath::ObjectPath::Animation: objectPath = "Animation"; break;
-			}
+			}*/
+			objectPath = FilePath::SetObjectFilePath(objectFilePath[i]);
 
 			// 文字列を連結しパスを生成
 			std::wstringstream ss;

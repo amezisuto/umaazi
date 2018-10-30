@@ -23,6 +23,7 @@ FilePath::ScenePath FilePath::InitializeSceneFilePath(int num)
 	case ScenePath::PlayScene:  path[0] = ScenePath::PlayScene;   break;
 	}
 	return path[0];
+
 }
 /// <summary>
 /// オブジェクトパスの初期化
@@ -39,4 +40,41 @@ FilePath::ObjectPath FilePath::InitializeObjectFilePath(int num)
 	case ObjectPath::Animation: path[0] = ObjectPath::Animation; break;
 	}
 	return path[0];
+}
+
+/// <summary>
+/// シーンパスの文字列を返す
+/// </summary>
+/// <param name="path">シーンパスの名前</param>
+/// <returns>パスの文字列</returns>
+char* FilePath::SetSceneFilePath(ScenePath path)
+{
+	PathLength pathLen;
+
+	switch (path)
+	{
+	case FilePath::ScenePath::LogoScene:  pathLen.scenePath = "LogoScene";  break;
+	case FilePath::ScenePath::TitleScene: pathLen.scenePath = "TitleScene"; break;
+	case FilePath::ScenePath::PlayScene:  pathLen.scenePath = "PlayScene";  break;
+	}
+
+	return pathLen.scenePath;
+}
+/// <summary>
+/// オブジェクトパスの文字列を返す
+/// </summary>
+/// <param name="path">オブジェクトパスの名前</param>
+/// <returns>パスの文字列</returns>
+char* FilePath::SetObjectFilePath(ObjectPath path)
+{
+	PathLength pathLen;
+
+	switch (path)
+	{
+	case FilePath::ObjectPath::Character: pathLen.objectPath = "Character"; break;
+	case FilePath::ObjectPath::UI:        pathLen.objectPath = "UI";        break;
+	case FilePath::ObjectPath::Animation: pathLen.objectPath = "Animation"; break;
+	}
+
+	return pathLen.objectPath;
 }

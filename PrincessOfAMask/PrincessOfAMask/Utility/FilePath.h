@@ -10,6 +10,7 @@
 
 namespace FilePath
 {
+	// シーンパス
 	enum ScenePath
 	{
 		LogoScene,        // ロゴシーン
@@ -18,7 +19,7 @@ namespace FilePath
 		
 		NumScene          // 総数
 	};
-
+	// オブジェクトパス
 	enum ObjectPath
 	{
 		Character,        // キャラ
@@ -27,9 +28,20 @@ namespace FilePath
 
 		NumObject         // 総数
 	};
+	// パス文字列
+	struct PathLength
+	{
+		char* scenePath;
+		char* objectPath;
+	};
 
 	// シーンパスの初期化
 	ScenePath InitializeSceneFilePath(int num);
 	// オブジェクトパスの初期化
 	ObjectPath InitializeObjectFilePath(int num);
+
+	// シーンパスの設定
+	char* SetSceneFilePath(ScenePath path);
+	// オブジェクトパスの設定
+	char* SetObjectFilePath(ObjectPath path);
 }
